@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+# Plotly_Challenge - Belly Button Biodiverstity Dashboard
+#### VDAB Module 12 Plotly, HTML, CSS, Bootstrap and Javascript
+Sandra Whitley | Jan 2021
+******************************************************
 
-You can use the [editor on GitHub](https://github.com/sandywhitley/Plotly_Challenge/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## Overview
+The purpose of the Belly Button Biodiversity Dashboard project was to practice html (Hypertext Markup Language) css (Cascading Style Sheets), Bootstrap, Javascript, and Plotly to develop a dynamic webpage capable of querying a JSON data file. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+In this exercise, the Bellybutton Biodiversity web page was built using html primarily for the web page structure and then css (Cascading Style Sheets) and Bootstrap for styling queues. The charts.js was written to give the webpage table searchabilty while the samples.json file served as the content for the webpage table.
 
-### Markdown
+The Test Subject ID No. was built to allow querying on the Test Subject ID. The Demographic Info panel would provide metadata demographic info on the Test Subject Id and the various graphs would provide the data visualizations of the belly button biodiversity.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Results
+Unfortunately I was persistently plagued with a "Uncaught Syntax Error: Unexpeced token ' : ' in the samples.json file line 2 in the Chrome console. The colon referenced was a required component of the json file data structure. Eliminating it did not resolve the error. This error prevented the sample.json file from ever loading.
 
-```markdown
-Syntax highlighted code block
+A great amount of time and multiple resources were explored to resolve the error such as redeploying D3.json, downloading Ajax and calling it in the charts.js, to name a couple. Ultimately I did as much coding as possible without being able to load the samples.json file to properly test the code.
 
-# Header 1
-## Header 2
-### Header 3
+This webpage pic shows the index page with console error.
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sandywhitley/Plotly_Challenge/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+![snip](/static/images/snip.PNG)
