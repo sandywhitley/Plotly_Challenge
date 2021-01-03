@@ -2,6 +2,7 @@ function init() {
   // Grab a reference to the dropdown select element
   var selector = d3.select("#selDataset");
   var selector1 = d3.select("#dropOptions");
+  
   // Use the list of sample names to populate the select options
   d3.json("static/js/samples.json").then((data) => {
     var sampleNames = data.names;
@@ -19,7 +20,15 @@ function init() {
         $('.dropdown-menu').append(`<a data-value="${sample}" class="dropdown-item">${sample}</a> <div class="dropdown-divider"></div>`)
     
         });
-      
+
+        $.ajax({
+          crossOrigin: true,
+          url: url,
+          success: function(data) {
+          console.log(data);
+          }
+        });
+
         // jquery selector func: on click of a number in dropdown bar, run optionChanged func with selected valued
         $('.dropdown-menu a').click(function(){
         let sampleValue = $(this).attr('data-value')
@@ -100,7 +109,7 @@ function buildMetadata(sample) {
     // tags for each key-value in the metadata.
     Object.entries(result).forEach(([key, value]) => {
       // PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
-      PANEL.append("li.ist-group-item").text('${key.toUpperCase()}: ${value}');
+      PANEL.append("li.list-group-item").text('${key.toUpperCase()}: ${value}');
     });
 
   });
@@ -109,7 +118,7 @@ function buildMetadata(sample) {
 // 1. Create the buildCharts function.
 function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
-  d3.json("static/js/samples.json").then((data) => {
+  d3.json("static/js/samples.json").then(data) => {
     // 3. Create a variable that holds the samples array. 
     var samples = data.samples;
     var metaData = data.metadata;
@@ -157,9 +166,9 @@ function buildCharts(sample) {
     font:{
       color: "white"
     }
-    };
+    },
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("bar", barData, barLayout);
+    Plotly.newPlot("bar", barData, barLayout)
 
 
     // 11a. Create the trace for the bubble chart. 
@@ -172,15 +181,12 @@ function buildCharts(sample) {
         color: ids,
         size: values,
         colorscale: "Greens"},
-      }];
+      }],
   
     // 11b. Create the layout for the bubble chart.
     var bubbleLayout = {
       title: {
       text: "Bacteria Cultures per Sample",
-      font: {
-        color: "white"
-        }
       },
       plot_bgcolor: "333333",
       paper_bgcolor: "333333",
@@ -211,21 +217,18 @@ function buildCharts(sample) {
     // 12a. Create the trace for the gauge chart.
     var gaugeData = [{
         title: {text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week",
-                  font: {
-                    color: "white"
-                  }
-      },
+          },
         value: wfreq,
         type: "indicator",
         mode: "gauge+number",
         gauge: {axis: {range: [null, 10], tickmode: "auto", nticks: 6}, 
-                bar: {color: "black"},
+                bar: {color: "white"},
                 steps: [
                   {range: [0,2], color: "red"},
                   {range: [2,4], color: "orange"},
                   {range: [4,6], color: "yellow"},
-                  {range: [6,8], color: "lightgreen"},
-                  {range: [8,10], color: "green"}
+                  {range: [6,8], color: "green"},
+                  {range: [8,10], color: "blue"}
                 ]},
       }];
       
