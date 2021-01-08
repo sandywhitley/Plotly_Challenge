@@ -1,4 +1,4 @@
-# Plotly_Challenge - Belly Button Biodiverstity Dashboard
+# Plotly_Challenge - Belly Button Biodiversity Dashboard
 #### VDAB Module 12 Plotly, HTML, CSS, Bootstrap and Javascript
 Sandra Whitley | Jan 2021
 ******************************************************
